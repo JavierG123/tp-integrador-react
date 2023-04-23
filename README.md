@@ -11,10 +11,12 @@ Alexis Gabriel Cabrera
 ```
 
 ## Trello
-Tablero ==> [Trello](https://trello.com/b/ceUQoqjK/netflix-grupo-1) No dudes en pasar !!.
+Tablero => [Trello](https://trello.com/b/ceUQoqjK/netflix-grupo-1) No dudes en pasar !!.
+
 
 ## Deploy on Netlify
-Deploy totalmente fachero! ==> [Netlify](https://tp-integrador-react-cac.netlify.app/)
+Deploy totalmente fachero! => [TP Integrador Netflix](https://tp-integrador-react-cac.netlify.app/)
+
 
 ## Tecnologías implementadas:
 
