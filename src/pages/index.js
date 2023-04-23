@@ -14,21 +14,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <footer>
-
-      </footer>
-
-      <hero>
-
-      </hero>
-
       <main >
         <h1 className='titulo'>TP INTEGRADOR...</h1>
+        <div className='centrado'>
+          <img src='https://media.tenor.com/t3yHhG6m4YkAAAAC/cat-work.gif' alt='gif de gato trabajando'></img>
+        </div>
       </main>
 
-      <footer>
-
-      </footer>
     </>
   )
 }

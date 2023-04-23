@@ -9,6 +9,16 @@
   font-size: 2.5rem;
   color: white;
   text-align: center;
-  margin: 30px 0px;
-  text-shadow: 4px 4px 5px  rgb(4, 220, 220);
+  margin: 25px 0px;
+  text-shadow: 4px 4px 5px rgb(4, 220, 220);
+}
+
+.centrado {
+  margin: 10% 0px;
+  display: flex;
+  place-content: center;
+}
+
+main img {
+  width: 350px;
 }
