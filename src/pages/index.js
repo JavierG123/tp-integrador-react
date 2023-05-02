@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 // =============== ESTILOS ===============
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navegacion from './components/Navegacion'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,6 +18,7 @@ export default function Home() {
       </Head>
 
       <main >
+        <Navegacion />
         <h1 className='titulo'>TP INTEGRADOR...</h1>
         <div className='centrado'>
           <img src='https://media.tenor.com/t3yHhG6m4YkAAAAC/cat-work.gif' alt='gif de gato trabajando'></img>

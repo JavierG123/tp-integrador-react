@@ -22,3 +22,18 @@
 main img {
   width: 350px;
 }
+
+/* ===== DECORACION DE NAVBAR ====== */
+.logo {
+  width: 90px;
+  margin-left: 50px;
+}
+
+.perfil {
+  width: 30px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: underline;
+}
