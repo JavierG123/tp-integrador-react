@@ -37,3 +37,12 @@ main img {
   color: white;
   text-decoration: underline;
 }
+
+/* ===== DECORACION DE LOGIN ====== */
+.container__login {
+  margin: 10%;
+  padding: 50px;
+  /* border: solid 2px white; */
+  color: white;
+  text-align: center;
+}
