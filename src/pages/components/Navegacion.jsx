@@ -23,12 +23,12 @@ const Navegacion = () => {
           <Nav className="justify-content-end" activeKey="/home">
             <Nav.Item>
               <Nav.Link>
-                <i class="bi bi-search"></i>
+                <i className  ="bi bi-search"></i>
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link>
-                <i class="bi bi-lightbulb"></i>
+                <i className="bi bi-lightbulb"></i>
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
