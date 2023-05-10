@@ -6,40 +6,32 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 const Navegacion = () => {
   return (
-    <>
-      <Navbar bg="dark" variant="dark" className="navbar">
-        <Container fluid>
-          <Navbar.Brand href="#home">
-            <img className="logo" src="./Netflix.png"></img>
-          </Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Inicio</Nav.Link>
-            <Nav.Link href="#features">Series</Nav.Link>
-            <Nav.Link href="#pricing">Películas</Nav.Link>
-            <Nav.Link href="#pricing">Mi lista</Nav.Link>
-            <Nav.Link href="#pricing">Explora por idiomas</Nav.Link>
-          </Nav>
+    <Navbar bg="dark" variant="dark" className="navbar">
+      <Container fluid>
+        <Navbar.Brand href="#home">
+          <img className="logo" src="./Netflix.png"></img>
+        </Navbar.Brand>
+        <Nav className="me-auto">
+          <Nav.Link href="#Home">Inicio</Nav.Link>
+          <Nav.Link href="#Series">Series</Nav.Link>
+          <Nav.Link href="#Películas">Películas</Nav.Link>
+          <Nav.Link href="#Lista">Mi lista</Nav.Link>
+          <Nav.Link href="#Idiomas">Explora por idiomas</Nav.Link>
+        </Nav>
 
-          <Nav className="justify-content-end" activeKey="/home">
-            <Nav.Item>
-              <Nav.Link>
-                <i className  ="bi bi-search"></i>
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link>
-                <i className="bi bi-lightbulb"></i>
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link>
-                <img className="perfil" src="./perfil.png"></img>
-              </Nav.Link>
-            </Nav.Item>
-          </Nav>
-        </Container>
-      </Navbar>
-    </>
+        <Nav className="justify-content-end" activeKey="/home">
+          <Nav.Link>
+            <i className="bi bi-search"></i>
+          </Nav.Link>
+          <Nav.Link>
+            <i className="bi bi-lightbulb"></i>
+          </Nav.Link>
+          <Nav.Link>
+            <img className="perfil" src="./perfil.png"></img>
+          </Nav.Link>
+        </Nav>
+      </Container>
+    </Navbar>
   );
 };
 

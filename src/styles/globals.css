@@ -5,6 +5,14 @@
   background-color: black;
 }
 
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
 .titulo {
   font-size: 2.5rem;
   color: white;
@@ -45,4 +53,44 @@ main img {
   /* border: solid 2px white; */
   color: white;
   text-align: center;
+}
+
+/* ===== DECORACION DE FOOTER ====== */
+.footer {
+  color: white;
+  margin: 10px auto;
+  font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+}
+
+.footer__icons {
+  display: flex;
+  place-content: center;
+}
+
+.footer__icons i {
+  font-size: 1.4rem;
+  margin: 5px 20px;
+  transition: all .3s ease-in;
+}
+
+.footer__icons i:hover {
+  color: rgb(166, 36, 36);
+  transform: scale(1.3);
+}
+
+.footer__links a {
+  text-decoration: none;
+  color: grey;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.footer__links a:hover {
+  color: grey;
+  text-decoration: underline;
+}
+
+.footer__copyright {
+  font-size: 11px;
+  color: grey;
 }
