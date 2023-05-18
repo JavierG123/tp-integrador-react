@@ -2,11 +2,11 @@ import Head from 'next/head'
 // =============== ESTILOS ===============
 import 'bootstrap/dist/css/bootstrap.min.css';
 // =============== COMPONENTS ===============
-import { MainContextProvider } from './components/context/MainContextProvider';
+import { MainContextProvider } from '../components/context/MainContextProvider';
 
-import Navegacion from './components/Navegacion'
-import Login from './components/Login';
-import Footer from './components/Footer';
+import Navegacion from '../components/Navegacion'
+import Login from '../components/Login';
+import Footer from '../components/Footer';
 
 
 // import { Inter } from 'next/font/google'
