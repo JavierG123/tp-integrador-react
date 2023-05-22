@@ -7,15 +7,15 @@ const Footer = () => {
   return (
     <Container className="footer">
       <div className="footer__icons">
-        <i class="bi bi-facebook"></i>
-        <i class="bi bi-instagram"></i>
-        <i class="bi bi-twitter"></i>
-        <i class="bi bi-youtube"></i>
+        <i className="bi bi-facebook"></i>
+        <i className="bi bi-instagram"></i>
+        <i className="bi bi-twitter"></i>
+        <i className="bi bi-youtube"></i>
       </div>
 
-      <div class="footer__links">
-        <div class="row">
-          <div class="col-sm">
+      <div className="footer__links">
+        <div className="row">
+          <div className="col-sm">
             <li>
               <ul>
                 <a href="#">Audio descriptivo</a>
@@ -28,7 +28,7 @@ const Footer = () => {
               </ul>
             </li>
           </div>
-          <div class="col-sm">
+          <div className="col-sm">
             <li>
               <ul>
                 <a href="#">Centro de ayuda</a>
@@ -41,7 +41,7 @@ const Footer = () => {
               </ul>
             </li>
           </div>
-          <div class="col-sm">
+          <div className="col-sm">
             <li>
               <ul>
                 <a href="#">Tarjetas de regalo</a>
@@ -54,7 +54,7 @@ const Footer = () => {
               </ul>
             </li>
           </div>
-          <div class="col-sm">
+          <div className="col-sm">
             <li>
               <ul>
                 <a href="#">Prensa</a>

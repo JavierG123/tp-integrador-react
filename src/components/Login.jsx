@@ -1,19 +1,28 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { MainContextState } from "./context/MainContextProvider";
+//import { collectGenerateParams } from "next/dist/build/utils";
 
 const Login = () => {
+  const{dataState, setDataState }=useContext(MainContextState)
+
   const [email, setEmail] = useState();
   const [pass, setPass] = useState();
 
   const mostrarEmailAndPass = (e) => {
     e.preventDefault();
-    alert(`Email: ${email} \nPassword: ${pass}`);
+    //alert(`Email: ${email} \nPassword: ${pass}`);
+    setDataState({... dataState,username:email, isLoggedIn:true})
+   
   };
+
+  if(dataState.isLoggedIn){ return <></>}
 
   return (
     <Container className="w-50 border border-white container__login">
+      
       <Form>
         <Form.Group>
           <Form.Label>Correo Electronico:</Form.Label>
