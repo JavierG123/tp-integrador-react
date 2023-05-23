@@ -26,8 +26,8 @@ const Movies = () => {
     <div className="container-fluid movies__container">
       {movies.map((mov) => (
         <div>
-          <div className="card-body p-3" key={mov.id}>
-            <h5 className="card-title text-center">{mov.title}</h5>
+          <div className="card-body text-white text-center p-3" key={mov.id}>
+            <h5 className="card-title my-2 ">{mov.title}</h5>
             <img
               src={API_IMG + mov.poster_path}
               className="card-img-top poster__movie"

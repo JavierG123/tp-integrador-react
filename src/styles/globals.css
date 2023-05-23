@@ -35,6 +35,17 @@ main img {
 .navbar a {
   color: white;
   text-decoration: underline;
+  transition: all .4s ease-out;
+}
+
+.navbar a:hover {
+  color: red;
+  text-decoration: line-through;
+
+}
+
+.negro {
+  background-color: black;
 }
 
 /* ===== DECORACION DE LOGIN ====== */
@@ -103,7 +114,8 @@ main img {
   font-size: 11px;
   color: grey;
 }
-.footer__copyright p{
+
+.footer__copyright p {
   margin-bottom: 0;
   text-align: center;
 }
@@ -113,6 +125,7 @@ main img {
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
+  background-color: black;
 }
 
 .card-body {
