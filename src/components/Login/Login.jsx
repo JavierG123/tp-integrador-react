@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { MainContextState } from "./context/MainContextProvider";
+import { MainContextState } from "../context/MainContextProvider";
 //import { collectGenerateParams } from "next/dist/build/utils";
 
 const Login = () => {

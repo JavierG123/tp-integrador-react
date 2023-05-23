@@ -3,6 +3,7 @@ import { MainContextState } from "./context/MainContextProvider";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { useRouter } from "next/router";
 /* IMPORTANDO ICONOS BOOTSTRAP*/
 import "bootstrap-icons/font/bootstrap-icons.css";
 
@@ -13,6 +14,12 @@ const Navegacion = () => {
     setDataState({... dataState,username:'anonymous', isLoggedIn:false})
   }
 
+  const navLinks = [
+    {title: 'Home', path: '/home'},
+    {title: 'Movies', path: '/movies'},
+    {title: 'Series', path: '/series'},
+  ]
+
   return (
     <Navbar bg="dark" variant="dark" className="navbar">
       <Container fluid>
@@ -20,9 +27,9 @@ const Navegacion = () => {
           <img className="logo" src="./Netflix.png"></img>
         </Navbar.Brand>
         <Nav className="me-auto">
-          <Nav.Link href="#Home">Inicio</Nav.Link>
+          <Nav.Link href="/home">Inicio</Nav.Link>
           <Nav.Link href="#Series">Series</Nav.Link>
-          <Nav.Link href="#Películas">Películas</Nav.Link>
+          <Nav.Link href="/movies">Películas</Nav.Link>
           <Nav.Link href="#Lista">Mi lista</Nav.Link>
           <Nav.Link href="#Idiomas">Explora por idiomas</Nav.Link>
         </Nav>

@@ -94,3 +94,20 @@ main img {
   font-size: 11px;
   color: grey;
 }
+
+/* =====DECORACION MOVIES ===== */
+.movies__container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.card-body {
+  width: 300px;
+  color: white;
+}
+
+.card-body h2 {
+  text-align: center;
+  color: white;
+}
