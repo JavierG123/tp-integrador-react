@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from "react";
-import MovieCard from "./MovieCard";
+//Importe de estilos de Bootstrap
+import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "react-bootstrap/Card";
+import React, { useEffect, useState } from "react";
+
 
 const Movies = () => {
   const API_KEY = "5cfb6e84540e60dcfb925c8dbfcd1aca";
@@ -23,13 +25,12 @@ const Movies = () => {
   return (
     <div className="container-fluid movies__container">
       {movies.map((mov) => (
-        // <MovieCard key={mov.id} {...mov} /> })}
-        <div >
-          <div class="card-body" key={mov.id}>
-            <h2 class="card-title">{mov.title}</h2>
+        <div>
+          <div className="card-body p-3" key={mov.id}>
+            <h5 className="card-title text-center">{mov.title}</h5>
             <img
               src={API_IMG + mov.poster_path}
-              class="card-img-top poster__movie"
+              className="card-img-top poster__movie"
               alt="Poster Movie"
             />
           </div>

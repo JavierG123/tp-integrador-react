@@ -1,11 +1,9 @@
-import React from "react";
-import { Container } from "react-bootstrap";
 /* IMPORTANDO ICONOS BOOTSTRAP*/
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 const Footer = () => {
   return (
-    <Container className="footer">
+    <div className="footer">
       <div className="footer__icons">
         <i className="bi bi-facebook"></i>
         <i className="bi bi-instagram"></i>
@@ -13,7 +11,7 @@ const Footer = () => {
         <i className="bi bi-youtube"></i>
       </div>
 
-      <div className="footer__links">
+      <div className="footer__links p-3">
         <div className="row">
           <div className="col-sm">
             <li>
@@ -72,7 +70,7 @@ const Footer = () => {
       <div className="footer__copyright">
         <p>© 1997-2023 Netlfix, Inc.</p>
       </div>
-    </Container>
+    </div>
   );
 };
 

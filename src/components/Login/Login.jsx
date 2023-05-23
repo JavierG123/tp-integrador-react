@@ -6,7 +6,7 @@ import { MainContextState } from "../context/MainContextProvider";
 //import { collectGenerateParams } from "next/dist/build/utils";
 
 const Login = () => {
-  const{dataState, setDataState }=useContext(MainContextState)
+  const { dataState, setDataState } = useContext(MainContextState);
 
   const [email, setEmail] = useState();
   const [pass, setPass] = useState();
@@ -14,54 +14,58 @@ const Login = () => {
   const mostrarEmailAndPass = (e) => {
     e.preventDefault();
     //alert(`Email: ${email} \nPassword: ${pass}`);
-    setDataState({... dataState,username:email, isLoggedIn:true})
-   
+    setDataState({ ...dataState, username: email, isLoggedIn: true });
   };
 
-  if(dataState.isLoggedIn){ return <></>}
+  if (dataState.isLoggedIn) {
+    return <></>;
+  }
 
   return (
-    <Container className="w-50 border border-white container__login">
-      
-      <Form>
-        <Form.Group>
-          <Form.Label>Correo Electronico:</Form.Label>
-          <Form.Control
-            required
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Ingrese un email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <Form.Text className="text-muted">
-            Nunca comparta su correo electronico con nadie!.
-          </Form.Text>
-        </Form.Group>
+    <div className="row pantalla__login p-5">
+      <div className="col-7">
+        <img src="./Netflix.png" alt="Imagen Titulo de Netflix" />
+      </div>
+      <Container className="col-5 py-2 container__login">
+        <Form className="p-3 formulario__login">
+          <h2 className="mb-4">Inicia Sesión</h2>
+          <Form.Group>
+            <Form.Control
+              className="my-3 p-2"
+              required
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Ingrese un email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </Form.Group>
 
-        <Form.Group>
-          <Form.Label className="mt-2">Contraseña:</Form.Label>
-          <Form.Control
-            required
-            type="password"
-            name="pass"
-            id="pass"
-            placeholder="Password"
-            onChange={(e) => setPass(e.target.value)}
-          />
-        </Form.Group>
+          <Form.Group>
+            <Form.Control
+              className="my-3 p-2"
+              required
+              type="password"
+              name="pass"
+              id="pass"
+              placeholder="Contraseña"
+              onChange={(e) => setPass(e.target.value)}
+            />
+          </Form.Group>
 
-        <Container className="pt-4 ">
-          <Button
-            variant="danger"
-            type="submit"
-            onClick={(e) => mostrarEmailAndPass(e)}
-          >
-            Ingresar
-          </Button>
-        </Container>
-      </Form>
-    </Container>
+          <div className=" ">
+            <Button
+              className="container w-50 rojo text-white"
+              variant=""
+              type="submit"
+              onClick={(e) => mostrarEmailAndPass(e)}
+            >
+              Iniciar sesión
+            </Button>
+          </div>
+        </Form>
+      </Container>
+    </div>
   );
 };
 

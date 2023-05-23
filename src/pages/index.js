@@ -7,8 +7,6 @@ import { MainContextProvider } from "../components/context/MainContextProvider";
 import Navegacion from "../components/Navegacion";
 import Login from "../components/Login/Login";
 import Footer from "../components/Footer";
-import Movies from "./Movies";
-import SocialLogin from "@/components/Login/SocialLogin";
 
 export default function Home() {
   return (
@@ -21,14 +19,7 @@ export default function Home() {
       </Head>
 
       <MainContextProvider>
-        <Navegacion />
-        {/* <SocialLogin /> */}
         <Login />
-        <main>
-          <Movies />
-        </main>
-
-        <Footer />
       </MainContextProvider>
     </>
   );
