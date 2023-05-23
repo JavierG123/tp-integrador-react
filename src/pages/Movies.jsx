@@ -21,7 +21,7 @@ const Movies = () => {
   }, []);
 
   return (
-    <div className=" movies__container">
+    <div className="container-fluid movies__container">
       {movies.map((mov) => (
         // <MovieCard key={mov.id} {...mov} /> })}
         <div >
