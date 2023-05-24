@@ -137,3 +137,13 @@ main img {
   text-align: center;
   color: white;
 }
+
+
+/* =====DECORACION SERIES ===== */
+.series__container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  background-color: black;
+}
+

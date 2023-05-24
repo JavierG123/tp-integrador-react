@@ -26,7 +26,7 @@ const Login = () => {
       <div className="col-7">
         <img src="./Netflix.png" alt="Imagen Titulo de Netflix" />
       </div>
-      <Container className="col-5 py-2 container__login">
+      <Container className="col-5 py-2 container__login rounded border border-danger">
         <Form className="p-3 formulario__login">
           <h2 className="mb-4">Inicia Sesión</h2>
           <Form.Group>
