@@ -22,7 +22,7 @@ const Navegacion = () => {
         </Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Link href="/">Inicio</Nav.Link>
-          <Nav.Link href="#series">Series</Nav.Link>
+          <Nav.Link href="/series">Series</Nav.Link>
           <Nav.Link href="/peliculas">Películas</Nav.Link>
           <Nav.Link href="#Lista">Mi lista</Nav.Link>
           <Nav.Link href="#Idiomas">Explora por idiomas</Nav.Link>
