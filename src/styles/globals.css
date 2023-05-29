@@ -147,3 +147,35 @@ main img {
   background-color: black;
 }
 
+
+/*  barra de opciones antes del login           */ 
+.container__simple_nav {
+  position: absolute;
+  display:flexbox;
+  text-align: end;
+  padding: 50px;
+   
+}
+
+/*menu de perfil*/
+.container__profile_menu{
+  display: flex;
+  place-content: flex-end; 
+  margin-top: 2px;
+}
+
+.profile__menu{
+  width:225px;
+  background-color: rgb(0, 0, 0);
+  text-align: left;
+}
+
+.profile__menu a{
+  text-decoration:none;
+  color: white;
+}
+
+.profile__menu li :hover{
+  color: white ;
+  font-weight: bold;
+}
