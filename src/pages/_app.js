@@ -1,15 +1,19 @@
 import '@/styles/globals.css'
 import { appFirebase } from '@/firebase/initConfig'
-import Navegacion from '@/components/Navegacion'
+import Navegacion from '@/components/Navegacion/Navegacion'
+import { MainContextProvider } from '@/components/context/MainContextProvider'
 import Footer from '@/components/Footer'
 
 
 export default function App({ Component, pageProps }) {
     return (
         <>
+        <MainContextProvider>
             <Navegacion />
+            
             <Component {...pageProps} />
             <Footer />
+        </MainContextProvider>
         </>
     )
 }
