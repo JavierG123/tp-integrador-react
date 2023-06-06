@@ -7,7 +7,6 @@ import Form from "react-bootstrap/Form";
 //import { collectGenerateParams } from "next/dist/build/utils";
 
 const Login = () => {
-  
   const [email, setEmail] = useState();
   const [pass, setPass] = useState();
   const { state, dispatch } = useContext(MainContextState);
@@ -15,17 +14,23 @@ const Login = () => {
   const mostrarEmailAndPass = (e) => {
     e.preventDefault();
     //alert(`Email: ${email} \nPassword: ${pass}`);
-   // setDataState({ ...dataState, username: email, isLoggedIn: true });
-   dispatch({type:"LOGIN"});
-   dispatch({type:"SETUSERNAME",username:email});
+    // setDataState({ ...dataState, username: email, isLoggedIn: true });
+    dispatch({ type: "LOGIN" });
+    dispatch({ type: "SETUSERNAME", username: email });
   };
 
   if (state.isLoggedIn) {
-    return <></>;
+    return (
+      <>
+        <div className="p-5 text-center vh-80">
+          <h1>ACTUALMENTE ESTAS LOGUEADO</h1>
+        </div>
+      </>
+    );
   }
 
   return (
-    <div className="row pantalla__login p-5">      
+    <div className="row pantalla__login p-5">
       <div className="col-7">
         <img src="./Netflix.png" alt="Imagen Titulo de Netflix" />
       </div>

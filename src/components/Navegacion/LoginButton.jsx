@@ -1,17 +1,17 @@
 import Button from "react-bootstrap/Button";
-import NextLink from "next/link"
+import Link from "next/link"
 const LoginButton = () => {
 
     return (
         <>
-            <NextLink href='/' passHref>
+            <Link href='/' passHref>
                 <Button
                     className="rojo"
                     variant="danger" size="sm"
                 >
                     Iniciar sesión
                 </Button>
-            </NextLink>
+            </Link>
         </>
     )
 

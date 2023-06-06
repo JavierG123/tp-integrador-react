@@ -1,6 +1,3 @@
-
-import Container from "react-bootstrap/Container";
-
 import LoginButton from "./LoginButton";
 import SelectIdioma from "./SelectIdioma";
 
@@ -8,17 +5,16 @@ import SelectIdioma from "./SelectIdioma";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 const SimpleNavBar = () => {
-
-
   return (
     <>
-      <Container fluid className=" container__simple_nav " >
-
-        <SelectIdioma />
-
-        <LoginButton />
-
-      </Container>
+      <div className="container-fluid  container__simple_nav ">
+        <span className="px-2">
+          <SelectIdioma />
+        </span>
+        <span className="px-2">
+          <LoginButton />
+        </span>
+      </div>
     </>
   );
 };
