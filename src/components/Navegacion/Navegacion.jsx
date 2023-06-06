@@ -3,17 +3,16 @@ import { MainContextState } from "../context/MainContextProvider";
 import FullNavBar from "./FullNavbar";
 import SimpleNavBar from "./SimpleNavBar";
 
-
 /* IMPORTANDO ICONOS BOOTSTRAP*/
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 
 const Navegacion = () => {
-  const{dataState }=useContext(MainContextState)
-
-
+ 
+  const { state } = useContext(MainContextState);
+ 
   return (
-    dataState.isLoggedIn ? <FullNavBar /> : <SimpleNavBar />
+    state?.isLoggedIn ? <FullNavBar /> : <SimpleNavBar />
   )
 };
 
