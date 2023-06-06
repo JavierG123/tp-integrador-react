@@ -25,7 +25,7 @@ const FullNavBar = () => {
             <Link className="px-2" href="/" passHref>
               Inicio
             </Link>
-            <Link href="/series" passHref>
+            <Link className="px-2" href="/series" passHref>
               Series
             </Link>
             <Link className="px-2" href="/peliculas" passHref>
