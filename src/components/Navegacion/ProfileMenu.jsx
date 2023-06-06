@@ -8,10 +8,11 @@ import { MainContextState } from "../context/MainContextProvider";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 const ProfileMenu = (params) => {
-    const { dataState, setDataState } = useContext(MainContextState)
-
+    
+    const { state, dispatch } = useContext(MainContextState)
     const logOut = () => {
-        setDataState({ ...dataState, username: 'anonymous', isLoggedIn: false })
+       
+        dispatch({type:"LOGOUT"})
     }
 
     if (!params.showMenu) { return <></> }

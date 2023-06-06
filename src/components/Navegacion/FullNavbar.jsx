@@ -3,6 +3,9 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import ProfileMenu from "./ProfileMenu";
+import NextLink from 'next/link';
+import Link from "next/link";
+
 
 /* IMPORTANDO ICONOS BOOTSTRAP*/
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -22,11 +25,13 @@ const FullNavBar = () => {
                         <img className="logo" src="./Netflix.png"></img>
                     </Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link href="/">Inicio</Nav.Link>
-                        <Nav.Link href="/series">Series</Nav.Link>
-                        <Nav.Link href="/peliculas">Películas</Nav.Link>
-                        <Nav.Link href="#Lista">Mi lista</Nav.Link>
-                        <Nav.Link href="#Idiomas">Explora por idiomas</Nav.Link>
+                        <NextLink href="/" passHref>Inicio</NextLink>
+                        <NextLink  href="/series" passHref>
+                            Series
+                        </NextLink>
+                        <NextLink href="/peliculas" passHref>Películas</NextLink>
+                        <NextLink href="#Lista" passHref>Mi lista</NextLink>
+                        <NextLink href="#Idiomas" passHref>Explora por idiomas</NextLink>
                     </Nav>
 
                     <Nav className="justify-content-end" activeKey="/home">
