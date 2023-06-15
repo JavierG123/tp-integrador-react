@@ -18,8 +18,8 @@ const ProfileMenu = (params) => {
     if (!params.showMenu) { return <></> }
     return (
         <>
-            <Container fluid className=" container__profile_menu " >
-                <div className="profile__menu">
+            <Container fluid className=" container__profile_menu  " >
+                <div className="profile__menu ">
 
                     <ul className="nav flex-column" >
                         <li className="nav-item">

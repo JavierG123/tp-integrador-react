@@ -23,6 +23,7 @@ const handleSubmit = (e) => {
     const nombre= form.nombre.value
     const pass= form.passRegister.value
     const pass2= form.passRegister2.value
+    console.log(email)
 
     ///// valida el correo
     let reg = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;

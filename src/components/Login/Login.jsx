@@ -26,16 +26,15 @@ const Login = () => {
   function submitFunction(event) {  
     event.preventDefault();
     const form = event.currentTarget;
-    //const email= form.email.value
+    const emailLogin= form.email.value
     setEmail(form.email.value)
     const pass= form.pass.value
    
     ///// valida el correo
     let reg = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-    let test = reg.test(email);
+    let test = reg.test(emailLogin);
     if(!test) {
       setCorreoInvalido(true)
-      console.log(email)
       return
     }
 
@@ -46,7 +45,7 @@ const Login = () => {
     }
 ///// autentica el usuario en firebase
     const auth = getAuth(appFirebase);
-      signInWithEmailAndPassword(auth, email, pass)
+      signInWithEmailAndPassword(auth, emailLogin, pass)
         
         .then((credentials) => {
           const user = credentials.user;
