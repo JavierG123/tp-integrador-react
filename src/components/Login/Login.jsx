@@ -1,25 +1,78 @@
 import { useState, useContext } from "react";
 import { MainContextState } from "../context/MainContextProvider";
+import { useRouter } from 'next/router'
+import { appFirebase } from "../../firebase/initConfigNew"
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
+import SocialLogin from "./SocialLogin";
 import { Container } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Alert from 'react-bootstrap/Alert';
+import MyToast from "../Toast/toast";
 
-//import { collectGenerateParams } from "next/dist/build/utils";
+
 
 const Login = () => {
-  const [email, setEmail] = useState();
-  const [pass, setPass] = useState();
+   const [email, setEmail] = useState();
+  // const [pass, setPass] = useState();
   const { state, dispatch } = useContext(MainContextState);
+  const [showMessage, setShowMessage] = useState(false);
+  const [correoInvalido, setCorreoInvalido] = useState(false);
+  const [passInvalido, setPassInvalido] = useState(false);
+  
+  
+  const router = useRouter()
 
-  const mostrarEmailAndPass = (e) => {
-    e.preventDefault();
-    //alert(`Email: ${email} \nPassword: ${pass}`);
-    // setDataState({ ...dataState, username: email, isLoggedIn: true });
-    dispatch({ type: "LOGIN" });
-    dispatch({ type: "SETUSERNAME", username: email });
-  };
+  function submitFunction(event) {  
+    event.preventDefault();
+    const form = event.currentTarget;
+    const emailLogin= form.email.value
+    setEmail(form.email.value)
+    const pass= form.pass.value
+   
+    ///// valida el correo
+    let reg = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    let test = reg.test(emailLogin);
+    if(!test) {
+      setCorreoInvalido(true)
+      return
+    }
 
+////valida la contraseña
+    if( pass.length < 6) {
+      setPassInvalido(true)
+      return
+    }
+///// autentica el usuario en firebase
+    const auth = getAuth(appFirebase);
+      signInWithEmailAndPassword(auth, emailLogin, pass)
+        
+        .then((credentials) => {
+          const user = credentials.user;
+          dispatch({ type: "LOGIN" });
+          dispatch({ type: "SETUSERNAME", username: user.displayName });        
+        })
+
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(errorCode);
+          console.log(errorMessage)
+          if (errorCode == "auth/user-not-found") {           
+            //no existe el usuario - sugiere registrarse
+            setShowMessage(true)
+          }
+          if (errorCode == "auth/wrong-password") {           
+            //contraseña Incorrecta
+            setPassInvalido(true)
+          }
+
+        })
+  }
+
+  
   if (state.isLoggedIn) {
+    router.push('/home')
     return (
       <>
         <div className="p-5 text-center vh-80">
@@ -35,7 +88,26 @@ const Login = () => {
         <img src="./Netflix.png" alt="Imagen Titulo de Netflix" />
       </div>
       <Container className="col-5 py-2 container__login rounded border border-danger">
-        <Form className="p-3 formulario__login">
+        {
+          showMessage &&
+          <Alert variant="danger" onClose={() => setShowMessage(false)} dismissible>
+            <Alert.Heading>Cuenta inexistente!</Alert.Heading>
+            <p>
+              ¿Deseas registrarte ahora?
+            </p>
+            <Button onClick={() => router.push({
+              pathname: '/registro',
+              query: { email:email },
+            })} variant="outline-danger">
+              Registarme
+            </Button>
+          </Alert>
+        }
+
+    { correoInvalido && <MyToast toast='Ingrese un correo válido' variant='danger'/>}
+    { passInvalido && <MyToast toast='la cotraseña no es válida' variant='danger'/>}
+    
+        <Form className="p-3 formulario__login" onSubmit={(e) => submitFunction(e)} >
           <h2 className="mb-4">Inicia Sesión</h2>
           <Form.Group>
             <Form.Control
@@ -45,7 +117,7 @@ const Login = () => {
               name="email"
               id="email"
               placeholder="Ingrese un email"
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setCorreoInvalido(false)}
             />
           </Form.Group>
 
@@ -57,7 +129,7 @@ const Login = () => {
               name="pass"
               id="pass"
               placeholder="Contraseña"
-              onChange={(e) => setPass(e.target.value)}
+              onChange={(e) => setPassInvalido(false)}
             />
           </Form.Group>
 
@@ -65,11 +137,13 @@ const Login = () => {
             <Button
               className="container w-50 rojo text-white"
               variant=""
-              type="submit"
-              onClick={(e) => mostrarEmailAndPass(e)}
+              type="submit"              
             >
               Iniciar sesión
             </Button>
+            </div>
+            <div>
+            <SocialLogin></SocialLogin>
           </div>
         </Form>
       </Container>
@@ -78,3 +152,4 @@ const Login = () => {
 };
 
 export default Login;
+

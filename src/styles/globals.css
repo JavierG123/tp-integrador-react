@@ -159,6 +159,7 @@ main img {
 
 /*menu de perfil*/
 .container__profile_menu{
+  position: absolute;
   display: flex;
   place-content: flex-end; 
   margin-top: 2px;
