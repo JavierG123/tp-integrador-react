@@ -17,7 +17,7 @@ const FullNavBar = () => {
 
   return (
     <>
-      <Navbar className="navbar navbar-dark negro">
+      <Navbar className="navbar navbar-dark negro text-capitalize">
         <Container fluid>
           <Navbar.Brand href="/">
             <img className="logo" src="./Netflix.png"></img>
@@ -32,7 +32,7 @@ const FullNavBar = () => {
             <Link className="px-2" href="/peliculas" passHref>
               Películas
             </Link>
-            <Link className="px-2" href="#Lista" passHref>
+            <Link className="px-2" href="/favoritos" passHref>
               Mi lista
             </Link>
              {/* <Nav.Link href="#Idiomas">Explora por idiomas</Nav.Link> */}
