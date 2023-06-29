@@ -3,6 +3,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import ProfileMenu from "./ProfileMenu";
 import Link from "next/link";
+import Dropdown from 'react-bootstrap/Dropdown';
 
 /* IMPORTANDO ICONOS BOOTSTRAP*/
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -16,7 +17,7 @@ const FullNavBar = () => {
 
   return (
     <>
-      <Navbar className="navbar negro">
+      <Navbar className="navbar navbar-dark negro text-capitalize">
         <Container fluid>
           <Navbar.Brand href="/">
             <img className="logo" src="./Netflix.png"></img>
@@ -31,12 +32,20 @@ const FullNavBar = () => {
             <Link className="px-2" href="/peliculas" passHref>
               Películas
             </Link>
-            <Link className="px-2" href="#Lista" passHref>
+            <Link className="px-2" href="/favoritos" passHref>
               Mi lista
             </Link>
-            <Link className="px-2" href="#Idiomas" passHref>
-              Explora por idiomas
-            </Link>
+             {/* <Nav.Link href="#Idiomas">Explora por idiomas</Nav.Link> */}
+            <Dropdown className="nav-item dropdown">
+                <Dropdown.Toggle variant="bg-dark border-secondary text-light" id="dropdown-autoclose-true">
+                  Español
+                </Dropdown.Toggle>
+                <Dropdown.Menu  variant='dark'>
+                  <Dropdown.Item href="#opcion-1">Español</Dropdown.Item>
+                  <Dropdown.Item href="#opcion-2">English</Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
+          
           </Nav>
 
           <Nav className="justify-content-end" activeKey="/home">
