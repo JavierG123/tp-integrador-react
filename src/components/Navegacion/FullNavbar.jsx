@@ -40,7 +40,7 @@ const FullNavBar = () => {
           </Nav>
 
           <Nav className="justify-content-end" activeKey="/home">
-            <Nav.Link>
+            <Nav.Link className="px-2" href="/buscar" passHref>
               <i className="bi bi-search"></i>
             </Nav.Link>
             <Nav.Link>
