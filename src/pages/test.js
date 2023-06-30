@@ -1,14 +1,11 @@
-
-import ProfileMenu from "@/components/Navegacion/ProfileMenu"
-
+import ProfileMenu from '@/components/Navegacion/ProfileMenu'
 
 const Test = () => {
-    return (
-        <>
-        <ProfileMenu showMenu={true} />
-        </>
-    )
+  return (
+    <>
+      <ProfileMenu showMenu />
+    </>
+  )
 }
 
 export default Test
-
