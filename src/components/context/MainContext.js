@@ -1,33 +1,31 @@
 export const defaultState = {
-  language: "es",
+  language: 'es',
   darkMode: true,
   isLoggedIn: false,
-  username: "anonymous"
+  username: 'anonymous'
 }
 
-export default function getInitialState() {
-
-  return defaultState;
+export default function getInitialState () {
+  return defaultState
 }
 
-export function saveContextState(newcontextState) {
-  //salva dentro de localstorage
-  localStorage.setItem("contextState", JSON.stringify(newcontextState))
+export function saveContextState (newcontextState) {
+  // salva dentro de localstorage
+  localStorage.setItem('contextState', JSON.stringify(newcontextState))
 }
 
-export function Reducer(state, action) {
-
+export function Reducer (state, action) {
   switch (action.type) {
     case 'LOGIN':
-      return { ...state, isLoggedIn: true };
+      return { ...state, isLoggedIn: true }
     case 'LOGOUT':
-      return { ...state, isLoggedIn: false, username:'anonymous' };
+      return { ...state, isLoggedIn: false, username: 'anonymous' }
     case 'SETLANGUAGE':
-      return { ...state, language: action.language };
+      return { ...state, language: action.language }
     case 'SETUSERNAME':
-      return { ...state,  username: action.username };
+      return { ...state, username: action.username }
     // Add more cases as needed to update specific properties of the user data
     default:
-      throw new Error(`Unhandled action type: ${action.type}`);
+      throw new Error(`Unhandled action type: ${action.type}`)
   }
 }
