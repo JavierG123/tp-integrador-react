@@ -1,6 +1,3 @@
-import { useState, useEffect } from 'react'
-import { SearchList } from '@/components/search/SearchList'
-
 import { useState, useEffect } from "react";
 import { SearchList } from '@/components/search/SearchList';
 
