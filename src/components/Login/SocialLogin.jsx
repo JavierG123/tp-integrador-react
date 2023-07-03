@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import { useRouter } from 'next/router'
 import { MainContextState } from '../context/MainContextProvider'
 import Button from 'react-bootstrap/Button'
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
@@ -6,6 +7,8 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
 import { appFirebase } from '@/firebase/initConfig'
 
 const SocialLogin = () => {
+  const router = useRouter()
+
   const { state, dispatch } = useContext(MainContextState)
 
   const googleProvider = new GoogleAuthProvider()
@@ -15,9 +18,10 @@ const SocialLogin = () => {
     signInWithPopup(auth, googleProvider)
       .then((credentials) => {
         const user = credentials.user
-        console.log('El usuario es ', user)
+       // console.log('El usuario es ', user)
         dispatch({ type: 'LOGIN' })
         dispatch({ type: 'SETUSERNAME', username: user.displayName })
+        dispatch({ type: 'SETUSERID', userID: user.uid })
         router.push('/home')
       })
       .catch((error) => {
