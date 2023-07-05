@@ -5,22 +5,16 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import { MainContextState } from "./context/MainContextProvider";
 import { useContext, useEffect, useState } from "react";
 
-const VisualCard = (params) => {
-  
+const VisualCard = (params) => { 
   const API_IMG = 'https://image.tmdb.org/t/p/w500'
-  
+ 
   const { state  } = useContext(MainContextState)
   const [favorito, setFavorito]= useState(false)
   const [documentID, setDocumentID]= useState()
 
     const estaEnFavoritos=()=>{
       const myCollection = collection(db, "listas")
-        // getDocs(myCollection).then((querySnapshot) => {
-        //     querySnapshot.forEach((doc) => {
-        //         console.log(`${doc.id} => ${JSON.stringify(doc.data())}`);
-        //     });
-        // });
-        
+      
         const q1 = query(myCollection, where("UID", "==", state.userID), where("id", "==", params.id));
         getDocs(q1).then((querySnapshot)=>{
             querySnapshot.forEach((doc) => {
@@ -32,7 +26,6 @@ const VisualCard = (params) => {
     }
 
     const agregarFavoritos=async()=>{   
-      //console.log (params)   
         try {
           const docRef = await addDoc(collection(db, "listas"), {
             UID:state.userID,
@@ -55,7 +48,7 @@ const VisualCard = (params) => {
       await deleteDoc(doc(db, "listas",documentID));
       
       setFavorito(false)
-     
+     if (params.obtenerLista ) {params.obtenerLista()}
     }
 
 
