@@ -9,6 +9,9 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import { useState } from 'react'
 
+/* IMPORT COMPONENTE Searbar */
+import SearchBar from '../search/SearchBar'
+
 const FullNavBar = () => {
   const [showMenu, setShowMenu] = useState(false)
   const toggleShowMenu = () => {
@@ -49,7 +52,8 @@ const FullNavBar = () => {
           </Nav>
 
           <Nav className="justify-content-end" activeKey="/home">
-            <Nav.Link>
+            <SearchBar />
+            <Nav.Link className="px-2" href="/buscar" passHref>
               <i className="bi bi-search"></i>
             </Nav.Link>
             <Nav.Link>
