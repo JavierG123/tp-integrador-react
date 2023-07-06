@@ -1,6 +1,7 @@
 import Container from 'react-bootstrap/Container'
 import { useContext } from 'react'
 import { MainContextState } from '../context/MainContextProvider'
+import { useRouter } from 'next/router'
 
 /* IMPORTANDO ICONOS BOOTSTRAP */
 import 'bootstrap-icons/font/bootstrap-icons.css'
@@ -9,6 +10,10 @@ const ProfileMenu = (params) => {
   const { state, dispatch } = useContext(MainContextState)
   const logOut = () => {
     dispatch({ type: 'LOGOUT' })
+  }
+  const router = useRouter()
+  const GoHome = () => {
+    router.push('/')
   }
 
   if (!params.showMenu) { return <></> }
@@ -36,6 +41,7 @@ const ProfileMenu = (params) => {
             <li
               className='nav-item' onClick={() => {
                 logOut()
+                GoHome()
               }}
             >
               <a className='nav-link' href='#'>Cerrar sesion en Netflix</a>

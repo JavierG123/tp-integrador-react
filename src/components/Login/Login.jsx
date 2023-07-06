@@ -48,6 +48,7 @@ const Login = () => {
         const user = credentials.user
         dispatch({ type: 'LOGIN' })
         dispatch({ type: 'SETUSERNAME', username: user.displayName })
+        dispatch({ type: 'SETUSERID', userID: user.uid })
       })
 
       .catch((error) => {
