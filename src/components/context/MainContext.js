@@ -20,7 +20,7 @@ export function Reducer (state, action) {
     case 'LOGIN':
       return { ...state, isLoggedIn: true }
     case 'LOGOUT':
-      return { ...state, isLoggedIn: false, username: 'anonymous', userID:'' }
+      return { ...state, isLoggedIn: false, username: 'anonymous', userID: '' }
     case 'SETLANGUAGE':
       return { ...state, language: action.language }
     case 'SETUSERNAME':

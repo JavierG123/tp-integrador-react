@@ -1,22 +1,19 @@
+import { useState, useEffect } from 'react'
+import { SearchList } from '@/components/search/SearchList'
+import { getMovieByName } from '../components/search/getMovieByName'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
-import { useState, useEffect } from "react";
-import { SearchList } from '@/components/search/SearchList';
-import {getMovieByName} from '../components/search/getMovieByName'
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import "bootstrap/dist/css/bootstrap.min.css";
-
-export default function Buscar() {
-
-    const [movies, setMovies] = useState( []);
+export default function Buscar () {
+  const [movies, setMovies] = useState([])
 
   useEffect(() => {
-    getMovieByName("marvel")
-    .then( movies => setMovies(movies))
+    getMovieByName('marvel')
+      .then(movies => setMovies(movies))
     console.log(movies)
   },
-  []);
-
+  [])
 
   return (
     <>
