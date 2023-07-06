@@ -5,6 +5,10 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import { MainContextState } from "./context/MainContextProvider";
 import { useContext, useEffect, useState } from "react";
 
+import "bootstrap/dist/css/bootstrap.css";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
+
 const VisualCard = (params) => { 
   const API_IMG = 'https://image.tmdb.org/t/p/w500'
  
@@ -32,7 +36,8 @@ const VisualCard = (params) => {
             id: params.id,
             name: params.name || params.title,
             original_name: params.original_name || params.original_title,
-            poster_path: params.poster_path
+            poster_path: params.poster_path,
+            overview:params.overview
           });
           setFavorito(true)
           setDocumentID(docRef.id)
@@ -51,6 +56,9 @@ const VisualCard = (params) => {
      if (params.obtenerLista ) {params.obtenerLista()}
     }
 
+    const renderTooltip = text => (
+      <Tooltip >{text}</Tooltip>
+    );
 
     useEffect(() => {  ///ejecuta solo en el primer render
      params.id && estaEnFavoritos()
@@ -71,13 +79,21 @@ const VisualCard = (params) => {
         <div className='botones-card'>
           {state.userID &&  /// si no existe el Id de usuaria en el context no muestra la botonera
           <ButtonGroup size='lg'>
-            <Button variant='dark' data-bs-toggle='tooltip' data-bs-placement='top' title='Tooltip on top'><i className='bi bi-play-circle' /></Button>
+             <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip('Reproducir')}  >
+              <Button variant='dark'  ><i className='bi bi-play-circle' /></Button>
+            </OverlayTrigger>
             { !favorito ?
+              <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip('Agregar a Mi Lista')}  >
               <Button variant='dark'> <i className='bi bi-plus-circle' onClick={()=>agregarFavoritos()}/></Button>
+              </OverlayTrigger>
               :
+              <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip('Quitar de Mi Lista')}  >
               <Button variant='dark'> <i className='bi bi-dash-circle' onClick={()=>quitarFavoritos()}/></Button>
+              </OverlayTrigger>
             }
+             <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip(params?.overview)}  >
             <Button variant='dark'><i className='bi bi-info-circle' /></Button>
+            </OverlayTrigger>
           </ButtonGroup>
       }
         </div>
