@@ -1,11 +1,24 @@
-import ProfileMenu from '@/components/Navegacion/ProfileMenu'
+import React from "react";
+import "bootstrap/dist/css/bootstrap.css";
+import Button from "react-bootstrap/Button";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 
-const Test = () => {
+function Test() {
+  const renderTooltip = (props) => (
+    <Tooltip {...props}>Tooltip content</Tooltip>
+  );
+
   return (
-    <>
-      <ProfileMenu showMenu />
-    </>
-  )
+    <div className="App">
+      <OverlayTrigger placement="right" overlay={renderTooltip}  >
+        <Button>Button with Tooltip</Button>
+      </OverlayTrigger>
+    </div>
+  );
 }
+
+
+  
 
 export default Test
